@@ -13,10 +13,8 @@ from math import floor, log
 P = lambda n : set(range(2, n+1)).difference(x for y in range(2, n+1) for x in range(2, n+1) if x != y and x % y == 0)
 R = lambda n : reduce(lambda a,b : 0+b, P(n))
 B = lambda n : True if n in P(n+1) else False
-N = lambda n : list(P(n*10))[n-1] if n < len(P(n*10)) else False
 
 # as individual functions
 P = lambda n : set(range(2, n+1)).difference(x for y in range(2, n+1) for x in range(2, n+1) if x != y and x % y == 0)) 
 R = lambda n : reduce(lambda a,b : 0+b, set(range(2, n+1)).difference(x for y in range(2, n+1) for x in range(2, n+1) if x != y and x % y == 0))
 B = lambda n : True if n in (set(range(2, n+2)).difference(x for y in range(2, n+2) for x in range(2, n+2) if x != y and x % y == 0)) else False
-N = lambda n : list(set(range(2, n*10)).difference(x for y in range(2, n*10) for x in range(2, n*10) if x != y and x % y == 0))[n-1] if n < len(set(range(2, n*10)).difference(x for y in range(2, n*10) for x in range(2, n*10) if x != y and x % y == 0)) else False
