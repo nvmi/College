@@ -10,10 +10,10 @@ from functools import reduce
 from math import floor, log
 
 # using P
-# P = lambda n : set(range(2, n+1)).difference(x for y in range(2, n+1) for x in range(2, n+1) if x != y and x % y == 0)
-# R = lambda n : reduce(lambda a,b : 0+b, P(n))
-# B = lambda n : True if n in P(n+1) else False
-# N = lambda n : list(P(n*floor(n*log(n,10))+1)))[n-1] if n < len(P(n*10)) else False
+P = lambda n : set(range(2, n+1)).difference(x for y in range(2, n+1) for x in range(2, n+1) if x != y and x % y == 0)
+R = lambda n : reduce(lambda a,b : 0+b, P(n))
+B = lambda n : True if n in P(n+1) else False
+N = lambda n : list(P(n*floor(n*log(n,10))+1)))[n-1] if n < len(P(n*10)) else False
 
 # as individual functions
 P = lambda n : set(range(2, n+1)).difference(x for y in range(2, n+1) for x in range(2, n+1) if x != y and x % y == 0)) 
